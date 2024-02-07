@@ -1,0 +1,81 @@
+<div class="head">
+    <p>
+      <mat-toolbar color="primary">
+        <mat-icon>people</mat-icon>&nbsp;
+        <span>Event Participants</span>
+        <button mat-raised-button color="warn" (click)="routeLog()" style="float: right; margin-top: 10px; margin-left: auto;">Log out</button>
+      </mat-toolbar>
+    </p>
+  </div>
+  
+  <div class="container">
+    <form #myform="ngForm">  
+      <h1 style="color: indigo; font-size: 30px;text-align: center;" ><b><u>Participants registration:</u></b></h1><br><br>
+    <table align="center" >
+        <tr><td><!-- Participant Email -->
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Enter Email</mat-label>
+              <input type="text" matInput name="email" #email="ngModel" ngModel required>
+            </mat-form-field></td>&nbsp;
+            <td><!-- Event Name -->
+                <mat-form-field class="example-full-width" appearance="outline">
+                 <mat-label>Enter Event Name</mat-label>
+                 <input type="text" matInput name="eventName" #eventName="ngModel" ngModel required>
+               </mat-form-field></td
+               >&nbsp;<td><!-- Availability -->
+                <!--<mat-form-field class="example-full-width" appearance="outline">
+                 <mat-label>Availability</mat-label>
+                 <input type="text" matInput name="availability" #availability="ngModel" ngModel required>
+               </mat-form-field>-->
+               <mat-radio-group aria-label="Availability" matInput name="availability" #availability="ngModel" ngModel required>
+                <mat-label>Availability:</mat-label>
+                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                <mat-radio-button value="No">No</mat-radio-button>
+              </mat-radio-group>
+              </td></tr>
+        <tr><td><div *ngIf="email.touched">
+            <div *ngIf="email.errors?.['required']">
+              <font color="red">Email Required</font>
+            </div>
+          </div></td>&nbsp;<td>
+            <div *ngIf="eventName.touched">
+                <div *ngIf="eventName.errors?.['required']">
+                  <font color="red">Event Name Required</font>
+                </div>
+              </div>
+          </td>&nbsp;<td><!-- <div *ngIf="availability.touched">
+            <div *ngIf="availability.errors?.['required']">
+              <font color="red">Response required!</font>
+            </div>
+          </div>--></td></tr>
+          <tr>
+            <button mat-raised-button color="primary" [disabled]="(myform.invalid )" (click)="insert(myform.value)">Submit</button>
+          </tr>
+    </table>
+
+</form></div>
+<br>
+<br>
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col" >
+        
+        <table class="table table-striped">
+          <thead>
+            <tr scope="row">
+              <th scope="col">Email </th>
+              <th scope="col">Event Name </th>
+              <th scope="col">Availability</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let par of parList" scope="row">
+              <td scope="col">{{par.email}}</td>
+              <td scope="col">{{par.eventName}}</td>
+              <td scope="col">{{par.availability}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
