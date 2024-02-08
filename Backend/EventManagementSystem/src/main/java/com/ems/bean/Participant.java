@@ -23,7 +23,6 @@ public class Participant {
 
 	public Participant() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Participant(String email, String eventName, String availability) {
