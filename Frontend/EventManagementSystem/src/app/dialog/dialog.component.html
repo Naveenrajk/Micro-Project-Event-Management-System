@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Add Event Form</h1><br>
+<div mat-dialog-content>
+    <form [formGroup]="eventForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Event Id</mat-label>
+        <input formControlName="eventId" matInput placeholder="Event Id">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Event Name</mat-label>
+        <input formControlName="eventName" matInput placeholder="Event Name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Event Type</mat-label>
+        <mat-select formControlName="eventType" placeholder="Event Type">
+            <mat-option value="Business">Business</mat-option>
+            <mat-option value="Religious">Religious</mat-option>
+            <mat-option value="General">General</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="eventDate" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Event Time</mat-label>
+        <input formControlName="eventTime" matInput placeholder="Event Time">
+    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Event Venue</mat-label>
+        <input formControlName="eventVenue" matInput placeholder="Event Venue">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput placeholder="Email">
+    </mat-form-field></form>
+</div>
+<div mat-dialog-actions align='end'>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addEvent()">{{actionBtn}}</button>
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>    
+</div>

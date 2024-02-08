@@ -1,0 +1,54 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  label{
+    text-align: center;
+  }
+.container-fluid{
+    margin-left: 5%;
+}
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+ 
+  .example-full-width {
+    width: 250px;
+    height:70px;
+  }
+  .department{
+    width: 250px;
+    height:70px;
+  }
+  .date{
+    width: 250px;
+    height:70px;
+  }
+  .table table-striped{
+    width:100%;
+  }
+  .form{
+    align-content: center;
+  }
+
+mat-radio-button{
+    font-size: large;
+    font-weight: normal;
+}
+.ans{
+  font-family:'Times New Roman', Times, serif ;
+  font-style: italic;
+  border: 2p;
+}
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
